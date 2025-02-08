@@ -23,7 +23,7 @@
             const input = document.querySelector('.input');
             const url = input.value.trim();
             if (url) {
-                localStorage.setItem('iframe', 'static/iframe.html#' + url);
+                localStorage.setItem('iframe', '/static/iframe.html#' + url);
                 window.location.href = 'static/embed.html';
             }
         }
