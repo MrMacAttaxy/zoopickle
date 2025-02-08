@@ -21,8 +21,11 @@
 
         function handleSearch() {
             const input = document.querySelector('.input');
-            const url = input.value.trim();
+            let url = input.value.trim().toLowerCase();
             if (url) {
+                if (!url.startsWith('https://') && !url.startsWith('http://')) {
+                    url = 'https://' + url;
+                }
                 localStorage.setItem('iframe', '/static/iframe.html#' + url);
                 window.location.href = 'static/embed.html';
             }
